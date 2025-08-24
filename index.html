@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESG Investing Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Energetic & Playful -->
+    <!-- 
+    Application Structure Plan: 
+    The infographic follows a narrative structure designed for a beginner investor. It starts with a hook ("What is ESG?"), breaks down the core components ("The Three Pillars"), explains the motivation ("Why Investors Choose ESG"), addresses a key complexity ("The Ratings Puzzle"), highlights a major risk ("Beware of Greenwashing"), and ends with a call to action ("How to Get Started"). This linear, story-driven flow is ideal for an infographic, guiding the user logically from concept to action. Each section uses a combination of large text for key stats, explanatory paragraphs, and a primary visualization to make the information digestible and visually engaging.
+    -->
+    <!-- 
+    Visualization & Content Choices:
+    1.  What is ESG?: Goal=Inform -> Viz=Large text + icons -> Justification=Immediately grabs attention and defines the core concept simply. Method=HTML/CSS with Unicode characters.
+    2.  The Three Pillars: Goal=Compare/Inform -> Viz=Three-column card layout with a central Donut Chart -> Justification=Allows for easy comparison of the pillars while the donut chart visually represents their equal contribution to the overall concept. Library=Chart.js/Canvas.
+    3.  Why Investors Choose ESG: Goal=Organize/Inform -> Viz=Bar Chart -> Justification=Effectively compares the primary drivers behind ESG adoption (Financial Performance, Risk Management, Aligning Values). The chart provides a clear visual hierarchy of motivations. Library=Chart.js/Canvas.
+    4.  The Ratings Puzzle: Goal=Compare/Explain -> Viz=Side-by-side comparison table -> Justification=Directly illustrates the "disagreement" problem by showing how two major agencies (MSCI and Sustainalytics) use different methodologies and scales, which is a core concept from the source material. Method=HTML/CSS.
+    5.  Beware of Greenwashing: Goal=Inform -> Viz=List with icon markers -> Justification=Clearly presents actionable red flags for investors in a scannable format. Method=HTML/CSS with Unicode.
+    6.  How to Get Started: Goal=Organize/Process -> Viz=Numbered timeline/flowchart -> Justification=Presents the steps for a beginner investor in a clear, sequential process. Method=Structured HTML/CSS.
+    CONFIRMATION: NO SVG graphics used. NO Mermaid JS used.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F9FA;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <!-- Header Section -->
+        <header class="text-center py-12">
+            <h1 class="text-4xl md:text-6xl font-bold text-[#003F5C]">The Rise of ESG Investing</h1>
+            <p class="text-lg md:text-xl text-gray-600 mt-4 max-w-3xl mx-auto">A visual guide to understanding how Environmental, Social, and Governance factors are reshaping the investment landscape in the USA.</p>
+        </header>
+
+        <!-- Section 1: The Three Pillars -->
+        <section id="pillars" class="py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#003F5C]">What Are The Three Pillars of ESG?</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">ESG investing evaluates companies on more than just their bottom line. It's a holistic approach that uses three key pillars to measure a company's sustainability and ethical impact.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-[#2F4B7C]">
+                    <div class="text-5xl mb-4">🌍</div>
+                    <h3 class="text-2xl font-bold text-[#2F4B7C] mb-2">Environmental</h3>
+                    <p class="text-gray-600">How a company performs as a steward of nature. This includes its carbon footprint, pollution, energy efficiency, and use of natural resources.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-[#665191]">
+                    <div class="text-5xl mb-4">🤝</div>
+                    <h3 class="text-2xl font-bold text-[#665191] mb-2">Social</h3>
+                    <p class="text-gray-600">How it manages relationships with employees, suppliers, customers, and the communities where it operates, focusing on issues like labor practices and diversity.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg border-t-4 border-[#A05195]">
+                    <div class="text-5xl mb-4">🏛️</div>
+                    <h3 class="text-2xl font-bold text-[#A05195] mb-2">Governance</h3>
+                    <p class="text-gray-600">How a company is led and managed. This covers executive pay, audits, internal controls, and shareholder rights.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Why Investors Choose ESG -->
+        <section id="why-invest" class="py-16 bg-white rounded-lg shadow-inner">
+             <div class="text-center mb-12 px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#003F5C]">Beyond Ethics: The Drivers of ESG Growth</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">While personal values are a key factor, the surge in ESG investing is also fueled by strong financial reasoning. Investors are recognizing that sustainable practices can be a sign of a resilient, well-managed company.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="px-4">
+                    <h3 class="text-2xl font-bold mb-4">Key Motivations for Investors:</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-2xl text-[#D45087] mr-3">📈</span>
+                            <div>
+                                <h4 class="font-bold">Potential for Stronger Returns</h4>
+                                <p class="text-gray-600">Many believe that companies with strong ESG practices are better positioned for long-term growth and may outperform their peers, especially during market volatility.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl text-[#F95D6A] mr-3">🛡️</span>
+                            <div>
+                                <h4 class="font-bold">Smarter Risk Management</h4>
+                                <p class="text-gray-600">ESG analysis helps identify non-financial risks like climate change regulations or reputational damage that traditional analysis might miss.</p>
+                            </div>
+                        </li>
+                         <li class="flex items-start">
+                            <span class="text-2xl text-[#FF7C43] mr-3">❤️</span>
+                            <div>
+                                <h4 class="font-bold">Aligning Investments with Values</h4>
+                                <p class="text-gray-600">A growing number of investors, especially younger generations, want to use their capital to support companies making a positive impact on the world.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="chart-container h-[40vh] md:h-96">
+                    <canvas id="investorMotivationChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: The Ratings Puzzle -->
+        <section id="ratings" class="py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#003F5C]">The Ratings Puzzle</h2>
+                <p class="text-gray-600 mt-4 max-w-3xl mx-auto">A major challenge in ESG is that rating agencies use different methods. This means the same company can get very different scores, making direct comparisons difficult. It's crucial for investors to look beyond a single score.</p>
+            </div>
+            <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-3 border-b-2 pb-4 mb-4">
+                    <div class="font-bold text-lg">Feature</div>
+                    <div class="font-bold text-lg text-center">Agency 1: MSCI</div>
+                    <div class="font-bold text-lg text-center">Agency 2: Sustainalytics</div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 border-b py-4">
+                    <div>Focus</div>
+                    <div class="text-center text-gray-700">Measures resilience to industry-specific ESG risks vs. peers.</div>
+                    <div class="text-center text-gray-700">Measures a company's absolute, unmanaged ESG risk.</div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 border-b py-4">
+                    <div>Scale</div>
+                    <div class="text-center text-gray-700">Letter grades (AAA to CCC)</div>
+                    <div class="text-center text-gray-700">Numerical score (0-40+). Lower is better.</div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 pt-4">
+                    <div>What a "Good" Score Means</div>
+                    <div class="text-center text-gray-700">An industry leader (e.g., AA or AAA)</div>
+                    <div class="text-center text-gray-700">Low risk (e.g., a score under 20)</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 4: Greenwashing -->
+        <section id="greenwashing" class="py-16 bg-white rounded-lg shadow-inner">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#003F5C]">Beware of "Greenwashing"</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Greenwashing is when a company or fund makes misleading claims about its ESG credentials. As an investor, it's vital to do your own research and watch for these common red flags.</p>
+            </div>
+            <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="flex items-start p-4">
+                    <span class="text-3xl mr-4">⚠️</span>
+                    <div>
+                        <h4 class="font-bold text-lg">Vague Language</h4>
+                        <p class="text-gray-600">Look out for fuzzy terms like "eco-friendly" or "sustainable" that aren't backed up by specific data or actions.</p>
+                    </div>
+                </div>
+                <div class="flex items-start p-4">
+                    <span class="text-3xl mr-4">🎭</span>
+                    <div>
+                        <h4 class="font-bold text-lg">Misleading Names</h4>
+                        <p class="text-gray-600">A fund might have "green" or "social" in its name, but its actual holdings may not align with those principles.</p>
+                    </div>
+                </div>
+                <div class="flex items-start p-4">
+                    <span class="text-3xl mr-4">📉</span>
+                    <div>
+                        <h4 class="font-bold text-lg">Lack of Transparency</h4>
+                        <p class="text-gray-600">Genuine ESG-focused companies and funds provide detailed reports on their strategies and progress. A lack of data is a major red flag.</p>
+                    </div>
+                </div>
+                 <div class="flex items-start p-4">
+                    <span class="text-3xl mr-4">🖼️</span>
+                    <div>
+                        <h4 class="font-bold text-lg">Irrelevant Claims</h4>
+                        <p class="text-gray-600">Highlighting a minor positive ESG action to distract from significant negative impacts in other areas of the business.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Getting Started -->
+        <section id="getting-started" class="py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#003F5C]">How to Get Started in 4 Steps</h2>
+                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Ready to start your ESG investing journey? Here’s a simple roadmap for beginners.</p>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="w-24 h-24 rounded-full bg-[#FFA600] text-white flex items-center justify-center text-4xl font-bold mb-4">1</div>
+                        <h3 class="font-bold text-lg">Define Your Values</h3>
+                        <p class="text-gray-600 px-2">Decide what matters most to you. Is it climate action, social equity, or corporate transparency?</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-24 h-24 rounded-full bg-[#FF7C43] text-white flex items-center justify-center text-4xl font-bold mb-4">2</div>
+                        <h3 class="font-bold text-lg">Choose Your Tools</h3>
+                        <p class="text-gray-600 px-2">Explore ESG-focused ETFs, mutual funds, or robo-advisors. These offer easy diversification for beginners.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-24 h-24 rounded-full bg-[#F95D6A] text-white flex items-center justify-center text-4xl font-bold mb-4">3</div>
+                        <h3 class="font-bold text-lg">Do Your Research</h3>
+                        <p class="text-gray-600 px-2">Read a fund's prospectus and look at its top holdings to ensure they align with your goals. Don't just trust the name.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-24 h-24 rounded-full bg-[#D45087] text-white flex items-center justify-center text-4xl font-bold mb-4">4</div>
+                        <h3 class="font-bold text-lg">Seek Guidance</h3>
+                        <p class="text-gray-600 px-2">If you're unsure, consider talking to a financial advisor who specializes in sustainable investing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const wrapLabel = (label) => {
+                const maxLength = 16;
+                if (label.length <= maxLength) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + ' ' + word).trim().length > maxLength) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                });
+                if (currentLine) {
+                    lines.push(currentLine.trim());
+                }
+                return lines;
+            };
+            
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                } else {
+                    return label;
+                }
+            };
+
+            // Investor Motivation Chart
+            const motivationCtx = document.getElementById('investorMotivationChart').getContext('2d');
+            new Chart(motivationCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Potential Financial Performance', 'Better Risk Management', 'Aligning with Personal Values'].map(wrapLabel),
+                    datasets: [{
+                        label: 'Importance to Investors',
+                        data: [75, 85, 90],
+                        backgroundColor: [
+                            '#D45087',
+                            '#F95D6A',
+                            '#FF7C43'
+                        ],
+                        borderRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%'
+                                }
+                            }
+                        },
+                        y: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
